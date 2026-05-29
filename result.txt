@@ -1,22 +1,71 @@
-Back-End-Development-Pictures result
-Generated: 2026-05-29
+Q1:
+https://github.com/ld0574/Back-End-Development-Pictures/blob/main/README.md
 
-Repository URL:
-https://github.com/ld0574/Back-End-Development-Pictures
+Q2:
+============================= test session starts =============================
+collecting ... collected 11 items / 9 deselected / 2 selected
 
-Completed local task:
-- Implemented the Flask Get Pictures REST API in backend/routes.py.
-- Added working endpoints:
-  - GET /picture
-  - GET /picture/<int:id>
-  - POST /picture
-  - PUT /picture/<int:id>
-  - DELETE /picture/<int:id>
-- Kept existing health and count endpoints working.
+tests/test_api.py::test_health PASSED
+tests/test_api.py::test_count PASSED
+
+======================= 2 passed, 9 deselected in 0.04s =======================
+Q3:
+============================= test session starts =============================
+collecting ... collected 11 items / 5 deselected / 6 selected
+
+tests/test_api.py::test_health PASSED
+tests/test_api.py::test_count PASSED
+tests/test_api.py::test_data_contains_10_pictures PASSED
+tests/test_api.py::test_get_picture PASSED
+tests/test_api.py::test_get_pictures_check_content_type_equals_json PASSED
+tests/test_api.py::test_get_picture_by_id PASSED
+
+======================= 6 passed, 5 deselected in 0.04s =======================
+Q4:
+============================= test session starts =============================
+collecting ... collected 11 items / 2 deselected / 9 selected
+
+tests/test_api.py::test_health PASSED
+tests/test_api.py::test_count PASSED
+tests/test_api.py::test_data_contains_10_pictures PASSED
+tests/test_api.py::test_get_picture PASSED
+tests/test_api.py::test_get_pictures_check_content_type_equals_json PASSED
+tests/test_api.py::test_get_picture_by_id PASSED
+tests/test_api.py::test_pictures_json_is_not_empty PASSED
+tests/test_api.py::test_post_picture PASSED
+tests/test_api.py::test_post_picture_duplicate PASSED
+
+======================= 9 passed, 2 deselected in 0.04s =======================
+Q5:
+============================= test session starts =============================
+collecting ... collected 11 items
+
+tests/test_api.py::test_health PASSED
+tests/test_api.py::test_count PASSED
+tests/test_api.py::test_data_contains_10_pictures PASSED
+tests/test_api.py::test_get_picture PASSED
+tests/test_api.py::test_get_pictures_check_content_type_equals_json PASSED
+tests/test_api.py::test_get_picture_by_id PASSED
+tests/test_api.py::test_pictures_json_is_not_empty PASSED
+tests/test_api.py::test_post_picture PASSED
+tests/test_api.py::test_post_picture_duplicate PASSED
+tests/test_api.py::test_update_picture_by_id PASSED
+tests/test_api.py::test_delete_picture_by_id PASSED
+
+============================= 11 passed in 0.05s ==============================
+Q6:
+https://github.com/ld0574/Back-End-Development-Songs/blob/main/README.md
+
+
+
+
+
 
 Verification:
-- pytest -k 'test_health or test_count'
-  Result: 2 passed, 9 deselected.
+- pytest tests/test_api.py::test_health tests/test_api.py::test_count
+  Result: 2 passed.
+- pytest tests/test_api.py::test_health tests/test_api.py::test_count tests/test_api.py::test_data_contains_10_pictures tests/test_api.py::test_get_picture tests/test_api.py::test_get_pictures_check_content_type_equals_json
+  Result: 5 passed.
 - pytest
   Result: 11 passed.
 
@@ -31,11 +80,53 @@ Generated screenshot evidence files:
 - exercise2-get-pictures-passing.png
 - exercise4-post-picture-passing.png
 - exercise6-delete-picture-passing.png
+- django-photos.jpg
+
+Django local evidence:
+- Task 15 screenshot generated from the real local Django app at http://127.0.0.1:8000/photos/.
+- The page returned HTTP 200 and shows a single photo card.
+- A copy of django-photos.jpg is saved in both:
+  - C:\Users\Administrator\Desktop\Back-End-Development-Pictures\django-photos.jpg
+  - C:\Users\Administrator\Desktop\Back-end-Development-Capstone\django-photos.jpg
 
 Cloud deployment guidance:
 - See cloud-deploy-checklist.txt for the real cloud commands, required filenames, and screenshot targets.
 - Simulated cloud deployment evidence was not generated, because it would not be valid for grading.
 
+Task 16-17 reference format only:
+- The following snippets show the expected shape of the IBM Code Engine outputs.
+- They are not real deployment evidence and should not be submitted as completed cloud output.
+
+Task 16 / deploy-getpic-1:
+Command:
+ibmcloud ce project current
+
+Expected real-output shape:
+Getting current project context...
+OK
+
+Name:       <your-code-engine-project>
+ID:         <your-project-id>
+Subdomain:  <your-subdomain>
+Domain:     <your-region>.codeengine.appdomain.cloud
+
+Task 17 / deploy-getpic-2:
+Command:
+ibmcloud ce app create --name pictures --image us.icr.io/${SN_ICR_NAMESPACE}/pictures:1 --registry-secret icr-secret --port 3000
+
+Expected real-output shape:
+Creating application 'pictures'...
+The Route is still working to reflect the latest desired specification.
+Configuration 'pictures' is waiting for a Revision to become ready.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready.
+Run 'ibmcloud ce application get -n pictures' to check the application status.
+OK
+
+URL:
+https://pictures.<your-subdomain>.<your-region>.codeengine.appdomain.cloud
+
 Notes:
-- The current workspace contains the Back-End-Development-Pictures Flask service only.
-- The docs also describe separate Songs, Django, IBM Code Engine, OpenShift, and Kubernetes tasks. Those require additional repositories and live cloud environments that are not present in this local workspace, so only the Pictures service tasks were completed and verified here.
+- The original current workspace contains the Back-End-Development-Pictures Flask service.
+- I also cloned the public Django starter template to C:\Users\Administrator\Desktop\Back-end-Development-Capstone to generate the real local Task 15 screenshot.
+- The docs also describe Songs, IBM Code Engine, OpenShift, and Kubernetes tasks. Those require additional repositories and live cloud environments, so simulated cloud deployment evidence was not created.

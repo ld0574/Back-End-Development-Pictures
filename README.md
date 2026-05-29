@@ -2,6 +2,30 @@
 
 Flask microservice for the band capstone project. The service exposes picture metadata from past events and provides REST endpoints used by the main Django application.
 
+## Environment Setup
+
+This repository was created from the IBM Skills Network template repository:
+
+```text
+https://github.com/ibm-developer-skills-network/luggb-Back-End-Development-Pictures
+```
+
+The local development environment is prepared by running the provided setup script:
+
+```bash
+bash ./bin/setup.sh
+```
+
+The setup script installs Python `3.9.x`, creates the course virtual environment named `backend-pics-venv`, installs the required Python packages from `requirements.txt`, and completes the capstone environment setup.
+
+After setup, confirm the environment with:
+
+```bash
+python3.9 --version
+source backend-pics-venv/bin/activate
+pytest
+```
+
 ## Endpoints
 
 - `GET /health` returns service health.
