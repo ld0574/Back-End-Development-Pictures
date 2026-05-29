@@ -32,6 +32,10 @@ Generated screenshot evidence files:
 - exercise4-post-picture-passing.png
 - exercise6-delete-picture-passing.png
 
+Cloud deployment guidance:
+- See cloud-deploy-checklist.txt for the real cloud commands, required filenames, and screenshot targets.
+- Simulated cloud deployment evidence was not generated, because it would not be valid for grading.
+
 Notes:
 - The current workspace contains the Back-End-Development-Pictures Flask service only.
 - The docs also describe separate Songs, Django, IBM Code Engine, OpenShift, and Kubernetes tasks. Those require additional repositories and live cloud environments that are not present in this local workspace, so only the Pictures service tasks were completed and verified here.
