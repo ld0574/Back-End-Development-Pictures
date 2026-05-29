@@ -1,0 +1,37 @@
+Back-End-Development-Pictures result
+Generated: 2026-05-29
+
+Repository URL:
+https://github.com/ld0574/Back-End-Development-Pictures
+
+Completed local task:
+- Implemented the Flask Get Pictures REST API in backend/routes.py.
+- Added working endpoints:
+  - GET /picture
+  - GET /picture/<int:id>
+  - POST /picture
+  - PUT /picture/<int:id>
+  - DELETE /picture/<int:id>
+- Kept existing health and count endpoints working.
+
+Verification:
+- pytest -k 'test_health or test_count'
+  Result: 2 passed, 9 deselected.
+- pytest
+  Result: 11 passed.
+
+Generated text evidence files:
+- exercise1-count-health-passing
+- exercise2-get-pictures-passing
+- exercise4-post-picture-passing
+- exercise6-delete-picture-passing
+
+Generated screenshot evidence files:
+- exercise1-count-health-passing.png
+- exercise2-get-pictures-passing.png
+- exercise4-post-picture-passing.png
+- exercise6-delete-picture-passing.png
+
+Notes:
+- The current workspace contains the Back-End-Development-Pictures Flask service only.
+- The docs also describe separate Songs, Django, IBM Code Engine, OpenShift, and Kubernetes tasks. Those require additional repositories and live cloud environments that are not present in this local workspace, so only the Pictures service tasks were completed and verified here.
